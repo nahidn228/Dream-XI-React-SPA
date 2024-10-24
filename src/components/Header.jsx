@@ -1,10 +1,9 @@
-import React from "react";
 import { TbCoin } from "react-icons/tb";
 
 const Header = () => {
   return (
     <div>
-      <div className="navbar bg-base-100 max-w-screen-xl mx-auto">
+      <div className="navbar bg-base-100 ">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -45,9 +44,9 @@ const Header = () => {
 
           <img src={"https://i.ibb.co.com/qkxHQdB/logo.png"} alt="" />
         </div>
-        
+
         <div className="navbar-end gap-2">
-        <ul className="menu menu-horizontal px-1 hidden lg:flex font-semibold">
+          <ul className="menu menu-horizontal px-1 hidden lg:flex font-semibold">
             <li>
               <a>Home</a>
             </li>
