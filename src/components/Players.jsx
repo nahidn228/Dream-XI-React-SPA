@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { FaUserAlt } from "react-icons/fa";
 import { IoFlag } from "react-icons/io5";
 
-const Players = () => {
+const Players = ({ handleIsActive, isActive }) => {
   const [Players, setPlayers] = useState([]);
   useEffect(() => {
     fetch("./Players.json")
@@ -17,9 +17,21 @@ const Players = () => {
         <div>
           <h2 className="text-xl font-bold">Available Players</h2>
         </div>
-        <div className="join border-2 ">
-          <button className="btn px-8 text-base">Available</button>
-          <button className="btn px-8 text-base">Selected</button>
+        <div className="join border-2 p-1">
+          <button
+            onClick={() => handleIsActive(true)}
+            className={`btn px-8 text-base  ${
+              isActive ? "bg-[#E7FE29]" : "bg-none"
+            }`}
+          >
+            Available
+          </button>
+          <button
+            onClick={() => handleIsActive(false)}
+            className={`btn px-8 text-base  ${isActive ? "" : "bg-[#E7FE29]"}`}
+          >
+            Selected
+          </button>
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 px-4">

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { TbCoin } from "react-icons/tb";
 
 const Header = ({ credit }) => {
