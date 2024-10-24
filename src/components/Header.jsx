@@ -1,6 +1,6 @@
 import { TbCoin } from "react-icons/tb";
 
-const Header = () => {
+const Header = ({ credit }) => {
   return (
     <div>
       <div className="navbar bg-base-100 ">
@@ -62,7 +62,7 @@ const Header = () => {
             </li>
           </ul>
           <a className="btn text-lg font-semibold">
-            0 Coin{" "}
+            {credit} Coin{" "}
             <span className="text-[#F39E09]">
               <TbCoin />
             </span>
