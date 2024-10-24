@@ -10,7 +10,7 @@ const Footer = () => {
 
   return (
     <div className='relative '>
-      <div className=' w-4/6 border-2 border-slate-500 rounded-2xl p-8  bg-transparent md:absolute md:left-56 md:-top-44 '>
+      <div className=' w-4/6 border-2 border-slate-500 rounded-2xl p-8 bg-transparent  md:absolute md:left-56 md:-top-44 '>
         <div style={backgroundImage} className='flex flex-col items-center p-10 rounded-2xl bg-white '>
         <h1 className="mb-5 text-2xl font-bold">
         Subscribe to our Newsletter
