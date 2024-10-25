@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-key */
 import { useEffect, useState } from "react";
 import { FaUserAlt } from "react-icons/fa";
@@ -8,6 +9,7 @@ const Players = ({
   isActive,
   handleSelectedPlayers,
   selectedPlayers,
+ 
 }) => {
   const [Players, setPlayers] = useState([]);
   useEffect(() => {

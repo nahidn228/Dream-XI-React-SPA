@@ -1,11 +1,19 @@
+/* eslint-disable react/prop-types */
 import { RiDeleteBin6Fill } from "react-icons/ri";
 
-const SelectedPlayers = ({ handleIsActive, isActive, selectedPlayers }) => {
+const SelectedPlayers = ({
+  handleIsActive,
+  isActive,
+  selectedPlayers,
+  handleDelete,
+}) => {
   return (
     <div>
       <div className="flex justify-between items-center px-6">
         <div>
-          <h2 className="text-xl font-bold">Selected Players ({selectedPlayers.length}/6) </h2>
+          <h2 className="text-xl font-bold">
+            Selected Players ({selectedPlayers.length}/6){" "}
+          </h2>
         </div>
         <div className="join border-2 p-1">
           <button
@@ -25,20 +33,30 @@ const SelectedPlayers = ({ handleIsActive, isActive, selectedPlayers }) => {
         </div>
       </div>
       {selectedPlayers.map((player, idx) => (
-        <div key={idx} className='flex justify-between items-center border-2 p-2 rounded-xl my-4 '>
-          <div className='flex items-center gap-2'>
+        <div
+          key={idx}
+          className="flex justify-between items-center border-2 p-2 rounded-xl my-4 "
+        >
+          <div className="flex items-center gap-2">
             <div>
-              <img className='h-16 rounded-xl' src={player.image} alt="" />
+              <img className="h-16 rounded-xl" src={player.image} alt="" />
             </div>
             <div>
-            <p className='text-lg font-semibold'> {player.name} </p>
-            <p className='text-sm font-medium text-gray-600'> {player.batting_bowling_type} </p>
+              <p className="text-lg font-semibold"> {player.name} </p>
+              <p className="text-sm font-medium text-gray-600">
+                {" "}
+                {player.batting_bowling_type}{" "}
+              </p>
             </div>
           </div>
           <div>
-            <button className='btn text-orange-600 text-xl '><RiDeleteBin6Fill /></button>
+            <button
+              onClick={() => handleDelete(player.playerId)}
+              className="btn text-orange-600 text-xl "
+            >
+              <RiDeleteBin6Fill />
+            </button>
           </div>
-          
         </div>
       ))}
 
