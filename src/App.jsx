@@ -102,7 +102,9 @@ function App() {
     <>
       <div className="w-11/12 md:max-w-screen-xl mx-auto space-y-10">
         <div className="md:mb-60 space-y-10">
-          <Header coin={coin}></Header>
+          <div className="sticky top-0">
+            <Header coin={coin}></Header>
+          </div>
           <Banner addCredit={addCredit}></Banner>
 
           {isActive ? (

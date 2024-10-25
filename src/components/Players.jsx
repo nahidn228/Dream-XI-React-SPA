@@ -25,10 +25,10 @@ const Players = ({
         <div>
           <h2 className="text-xl font-bold">Available Players</h2>
         </div>
-        <div className="join border-2 p-1">
+        <div className="join border-2 p-1 ">
           <button
             onClick={() => handleIsActive(true)}
-            className={`btn px-8 text-base  ${
+            className={`btn-md btn px-4 md:px-8 text-base  ${
               isActive ? "bg-[#E7FE29]" : "bg-none"
             }`}
           >
@@ -36,7 +36,7 @@ const Players = ({
           </button>
           <button
             onClick={() => handleIsActive(false)}
-            className={`btn px-8 text-base  ${isActive ? "" : "bg-[#E7FE29]"}`}
+            className={`btn-md btn px-4 md:px-8 text-base  ${isActive ? "" : "bg-[#E7FE29]"}`}
           >
             Selected ({selectedPlayers.length})
           </button>

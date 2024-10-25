@@ -33,7 +33,7 @@ While building this project, I encountered a few notable challenges:
 ## 📋 Detailed Requirements
 
 ### Navbar
-- Displays user coins starting at 0, with the ability to add coins via the banner.
+- Displays user coins starting at 0, with the ability to add coins via the banner button called "Claim free credit".
 
 ### Banner
 - Interactive button that adds coins to the user's budget for player purchases.
