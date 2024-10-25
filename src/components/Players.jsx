@@ -75,7 +75,7 @@ const Players = ({
                 <span className="flex items-center gap-1 ">
                   <button
                     onClick={() => handleSelectedPlayers(player)}
-                    className="btn btn-md"
+                    className="btn btn-md hover:bg-[#E7FE29]"
                   >
                     Choose Player
                   </button>

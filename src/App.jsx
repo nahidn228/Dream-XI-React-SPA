@@ -38,15 +38,27 @@ function App() {
   const handleSelectedPlayers = (player) => {
     const isExist = selectedPlayers.find((p) => p.playerId === player.playerId);
     let newPlayer = [];
-    if (!isExist) {
+    // if (!isExist) {
+    //   handleCredit(player.bidding_price);
+    //   newPlayer = [...selectedPlayers, player];
+    //   setSelectedPlayers(newPlayer);
+    // } else {
+    //   return alert("This Player already exist");
+    // }
+
+    if (isExist) {
+      return alert("This Player already exist");
+    } else if (player.bidding_price > credit) {
+      return alert("Not enough coin");
+    } else {
       handleCredit(player.bidding_price);
       newPlayer = [...selectedPlayers, player];
       setSelectedPlayers(newPlayer);
-    } else {
-      return alert("This Player already exist");
     }
+
+    //console.log(selectedPlayers);
+    //console.log(credit);
   };
-  //console.log(selectedPlayers);
 
   //Toggle button function
 
