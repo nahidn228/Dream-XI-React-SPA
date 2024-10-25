@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { toast } from "react-toastify";
 import Banner from "./components/Banner";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -6,8 +7,8 @@ import Players from "./components/Players";
 import SelectedPlayers from "./components/SelectedPlayers";
 
 function App() {
-  const [credit, setCredit] = useState(0);
-  const [coin, setCoin] = useState(60000000);
+  //const [credit, setCredit] = useState(0);
+  const [coin, setCoin] = useState(0);
   // const [isActive, setIsActive] = useState({
   //   player: true,
   //   status: "Available player",
@@ -17,8 +18,11 @@ function App() {
   const [selectedPlayers, setSelectedPlayers] = useState([]);
 
   const addCredit = () => {
-    const newCredit = credit + 60000000;
-    setCredit(newCredit);
+    toast.success("Congratulations !!! You have Got some extra COIN");
+    const newCredit = coin + 60000000;
+
+    setCoin(newCredit);
+    
   };
 
   const handleCredit = (playerPrice) => {
@@ -31,8 +35,10 @@ function App() {
 
   const handleDelete = (id) => {
     handleDeletePrice(id);
+
     const remainingPlayers = selectedPlayers.filter((p) => p.playerId !== id);
     setSelectedPlayers(remainingPlayers);
+    toast.warning("Successfully Deleted");
   };
 
   const handleSelectedPlayers = (player) => {
@@ -47,10 +53,12 @@ function App() {
     // }
 
     if (isExist) {
-      return alert("This Player already exist");
-    } else if (player.bidding_price > credit) {
-      return alert("Not enough coin");
+      return toast.warning("This Player already exist");
+    } else if (player.bidding_price > coin) {
+      return toast.error("Not enough coin");
     } else {
+      toast.success("Congratulations !!! You have added a new player");
+
       handleCredit(player.bidding_price);
       newPlayer = [...selectedPlayers, player];
       setSelectedPlayers(newPlayer);
@@ -88,7 +96,7 @@ function App() {
     <>
       <div className="w-11/12 md:max-w-screen-xl mx-auto space-y-10">
         <div className="md:mb-60 space-y-10">
-          <Header coin={coin} credit={credit}></Header>
+          <Header coin={coin} ></Header>
           <Banner addCredit={addCredit}></Banner>
 
           {isActive ? (

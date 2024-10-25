@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { RiDeleteBin6Fill } from "react-icons/ri";
 
+
 const SelectedPlayers = ({
   handleIsActive,
   isActive,
@@ -56,6 +57,7 @@ const SelectedPlayers = ({
             >
               <RiDeleteBin6Fill />
             </button>
+            
           </div>
         </div>
       ))}

@@ -25,6 +25,7 @@ const Banner = ({ addCredit }) => {
             >
               Claim Free Credit
             </button>
+           
           </div>
         </div>
       </div>

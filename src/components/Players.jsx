@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { FaUserAlt } from "react-icons/fa";
 import { IoFlag } from "react-icons/io5";
 
+
 const Players = ({
   handleIsActive,
   isActive,
@@ -79,6 +80,7 @@ const Players = ({
                   >
                     Choose Player
                   </button>
+                  
                 </span>
               </p>
             </div>

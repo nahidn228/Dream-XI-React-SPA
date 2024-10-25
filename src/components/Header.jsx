@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { TbCoin } from "react-icons/tb";
 
-const Header = ({ credit, coin }) => {
+const Header = ({  coin }) => {
   return (
     <div>
       <div className="navbar bg-base-100 ">
@@ -63,7 +63,7 @@ const Header = ({ credit, coin }) => {
             </li>
           </ul>
           <a className="btn text-lg font-semibold">
-            <span id="available-coin">{`${credit && coin}`}</span> Coin{" "}
+            <span id="available-coin">{`${coin}`}</span> Coin{" "}
             <span className="text-[#F39E09]">
               <TbCoin />
             </span>
