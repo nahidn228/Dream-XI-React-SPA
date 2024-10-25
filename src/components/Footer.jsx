@@ -9,8 +9,8 @@ const Footer = () => {
   };
 
   return (
-    <div className='relative '>
-      <div className=' w-4/6 border-2 border-slate-500 rounded-2xl p-8 bg-transparent  md:absolute md:left-56 md:-top-44 '>
+    <div className='relative'>
+      <div className=' w-full md:w-4/6 border-2 border-slate-500 rounded-2xl p-8 bg-transparent  md:absolute md:left-56 md:-top-44 '>
         <div style={backgroundImage} className='flex flex-col items-center p-10 rounded-2xl bg-white '>
         <h1 className="mb-5 text-2xl font-bold">
         Subscribe to our Newsletter
@@ -18,7 +18,7 @@ const Footer = () => {
             <p className="mb-5 text-gray-600 font-semibold text-lg">
             Get the latest updates and news right in your inbox!
             </p>
-            <div className="join">
+            <div className="md:join">
                 <input
                   type="text"
                   placeholder="Enter your email"
@@ -59,7 +59,7 @@ const Footer = () => {
                   Subscribe to our newsletter for the latest updates.
                 </span>
               </label>
-              <div className="join">
+              <div className="md:join">
                 <input
                   type="text"
                   placeholder="Enter your email"

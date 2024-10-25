@@ -12,7 +12,20 @@ function App() {
   //   status: "Available player",
   // });
 
-  const [isActive, setIsActive] = useState(true)
+  const [isActive, setIsActive] = useState(true);
+  const [selectedPlayers, setSelectedPlayers] = useState([]);
+
+  const handleSelectedPlayers = (player) => {
+    const isExist = selectedPlayers.find((p) => p.playerId === player.playerId);
+
+    if (isExist) {
+      return alert("This Player already exist");
+    } else {
+      const newPlayer = [...selectedPlayers, player];
+      setSelectedPlayers(newPlayer);
+    }
+  };
+  //console.log(selectedPlayers);
 
   const addCredit = () => {
     setCredit(credit + 60000000);
@@ -33,10 +46,10 @@ function App() {
     //   });
     // }
 
-    if(status){
-      setIsActive(true)
-    } else{
-      setIsActive(false)
+    if (status) {
+      setIsActive(true);
+    } else {
+      setIsActive(false);
     }
   };
 
@@ -44,13 +57,26 @@ function App() {
 
   return (
     <>
-      <div className="max-w-screen-xl mx-auto space-y-10">
-        <div className="mb-60 space-y-10">
+      <div className="w-11/12 md:max-w-screen-xl mx-auto space-y-10">
+        <div className="md:mb-60 space-y-10">
           <Header credit={credit}></Header>
           <Banner addCredit={addCredit}></Banner>
 
-         { isActive? <Players isActive={isActive} handleIsActive={handleIsActive}></Players> :
-          <SelectedPlayers isActive={isActive} handleIsActive={handleIsActive}></SelectedPlayers>}
+          {isActive ? (
+            <Players
+              selectedPlayers={selectedPlayers}
+              handleSelectedPlayers={handleSelectedPlayers}
+              isActive={isActive}
+              handleIsActive={handleIsActive}
+            ></Players>
+          ) : (
+            <SelectedPlayers
+            handleSelectedPlayers={handleSelectedPlayers}
+              selectedPlayers={selectedPlayers}
+              isActive={isActive}
+              handleIsActive={handleIsActive}
+            ></SelectedPlayers>
+          )}
         </div>
         <Footer></Footer>
       </div>

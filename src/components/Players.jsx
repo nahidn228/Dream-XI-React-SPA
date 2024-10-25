@@ -3,14 +3,19 @@ import { useEffect, useState } from "react";
 import { FaUserAlt } from "react-icons/fa";
 import { IoFlag } from "react-icons/io5";
 
-const Players = ({ handleIsActive, isActive }) => {
+const Players = ({
+  handleIsActive,
+  isActive,
+  handleSelectedPlayers,
+  selectedPlayers,
+}) => {
   const [Players, setPlayers] = useState([]);
   useEffect(() => {
     fetch("./Players.json")
       .then((res) => res.json())
       .then((data) => setPlayers(data));
   });
-
+  //console.log(selectedPlayers);
   return (
     <div>
       <div className="flex justify-between items-center px-6">
@@ -30,7 +35,7 @@ const Players = ({ handleIsActive, isActive }) => {
             onClick={() => handleIsActive(false)}
             className={`btn px-8 text-base  ${isActive ? "" : "bg-[#E7FE29]"}`}
           >
-            Selected
+            Selected ({selectedPlayers.length})
           </button>
         </div>
       </div>
@@ -66,7 +71,12 @@ const Players = ({ handleIsActive, isActive }) => {
               <p className="flex items-center justify-between gap-2 ">
                 <span>Price:${player.bidding_price}</span>
                 <span className="flex items-center gap-1 ">
-                  <button className="btn btn-md">Choose Player</button>
+                  <button
+                    onClick={() => handleSelectedPlayers(player)}
+                    className="btn btn-md"
+                  >
+                    Choose Player
+                  </button>
                 </span>
               </p>
             </div>
