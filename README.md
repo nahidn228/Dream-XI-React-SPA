@@ -12,7 +12,7 @@ This project provides a platform to assemble a cricket team from a list of avail
 - **React Toastify** for enhanced alert and notification handling
 - **JavaScript (ES6)** for logic and interactivity
 - **Tailwind CSS** for styling consistency
-- **Daisy UI** for styling navbar, card, footer 
+- **Daisy UI** for styling navbar, card, footer
 
 ## ✨ Key Features
 
@@ -33,31 +33,31 @@ While building this project, I encountered a few notable challenges:
 ## 📋 Detailed Requirements
 
 ### Navbar
+
 - Displays user coins starting at 0, with the ability to add coins via the banner button called "Claim free credit".
 
 ### Banner
+
 - Interactive button that adds coins to the user's budget for player purchases.
 
 ### Main Section
+
 - Buttons to toggle between **Available** and **Selected** players.
 - Dynamic count of selected players displayed.
 
 ### Player Cards
+
 - Players are displayed in cards (3-column layout) with details including name, country, role, type, and bidding price.
 - **Choose Player** button on each card to add players based on coin availability.
 
 ### Selected Players
+
 - Shows selected players with a **Remove** button, allowing players to be removed from the team.
 
 ### Newsletter and Footer
+
 - Designed to match the Figma layout for a consistent UI experience.
 
 ### Challenges and Validation
+
 - Duplicate player selection, max team size alerts, and React Toastify for notifications.
-
-## 💻 Installation & Setup
-
-1. **Clone the Repository**:
-   ```bash
-   git clone <repo-url>
-   cd BPL-DREAM-11
