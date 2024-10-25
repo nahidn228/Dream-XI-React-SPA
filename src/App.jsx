@@ -22,7 +22,6 @@ function App() {
     const newCredit = coin + 60000000;
 
     setCoin(newCredit);
-    
   };
 
   const handleCredit = (playerPrice) => {
@@ -37,6 +36,7 @@ function App() {
     handleDeletePrice(id);
 
     const remainingPlayers = selectedPlayers.filter((p) => p.playerId !== id);
+
     setSelectedPlayers(remainingPlayers);
     toast.warning("Successfully Deleted");
   };
@@ -52,10 +52,16 @@ function App() {
     //   return alert("This Player already exist");
     // }
 
+    // if (selectedPlayers.length === 6) {
+    //   return toast.error("Maximum player added");
+    // }
+
     if (isExist) {
       return toast.warning("This Player already exist");
     } else if (player.bidding_price > coin) {
       return toast.error("Not enough coin");
+    } else if (selectedPlayers.length === 6) {
+      return toast.error("Maximum player added");
     } else {
       toast.success("Congratulations !!! You have added a new player");
 
@@ -96,7 +102,7 @@ function App() {
     <>
       <div className="w-11/12 md:max-w-screen-xl mx-auto space-y-10">
         <div className="md:mb-60 space-y-10">
-          <Header coin={coin} ></Header>
+          <Header coin={coin}></Header>
           <Banner addCredit={addCredit}></Banner>
 
           {isActive ? (
