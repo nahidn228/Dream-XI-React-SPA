@@ -1,6 +1,6 @@
 # BPL-DREAM 11
 
-## Live Link: [BPL-DREAM 11] (https://dream-xi.surge.sh/)
+## Live Link: [BPL-DREAM 11](https://dream-xi.surge.sh/)
 
 
 BPL-DREAM 11 is a React-based web application where users can manage and select their dream cricket team. Built this app replicates the thrill of forming a cricket team within a budget by enabling users to choose players, track budget in coins, and validate each selection based on team composition rules.
